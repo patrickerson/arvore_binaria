@@ -24,42 +24,44 @@ public class Main {
         System.out.println("------------");
         System.out.println("Pre ordem");
         System.out.println("------------");
-        arvoreBinaria.pre_ordem();
+        arvoreBinaria.pre_order();
 
         System.out.println("------------");
         System.out.println("In ordem");
         System.out.println("------------");
-        arvoreBinaria.in_ordem();
+        arvoreBinaria.in_order();
 
 
 
         System.out.println("------------");
         System.out.println("Pos ordem");
         System.out.println("------------");
-        arvoreBinaria.pos_ordem();
+        arvoreBinaria.pos_order();
         System.out.print("Remove maior: ");
-        System.out.println(arvoreBinaria.remove_maior());
+        System.out.println(arvoreBinaria.remove_biggest());
 
         System.out.println("------------------------");
         System.out.println("REMOVE MAIOR - In ordem");
         System.out.println("------------------------");
-        arvoreBinaria.in_ordem();
+        arvoreBinaria.in_order();
 
         System.out.print("Remove menor: ");
-        System.out.println(arvoreBinaria.remove_menor());
+        System.out.println(arvoreBinaria.remove_smaller());
 
         System.out.println("------------------------");
         System.out.println("REMOVE MENOR - In ordem");
         System.out.println("------------------------");
-        arvoreBinaria.in_ordem();
+        arvoreBinaria.in_order();
 
 
+
+
+        arvoreBinaria.remove(12);
         arvoreBinaria.remove(10);
-
         System.out.println("------------------------");
         System.out.println("REMOVE - In ordem");
         System.out.println("------------------------");
-        arvoreBinaria.in_ordem();
+        arvoreBinaria.in_order();
     }
 
 

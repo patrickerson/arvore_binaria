@@ -2,39 +2,36 @@ package com.Patrickerson.ArvoreBinaria.Classes;
 
 public class Node {
     private int info;
-    private Node esquerda;
-    private Node direita;
+    private Node left;
+    private Node right;
 
 
     public int getInfo(){
         return info;
     }
 
-    public Node getEsquerda(){
-        return esquerda;
+    public Node getLeft(){
+        return left;
     }
 
-    public  Node getDireita(){
-        return direita;
+    public  Node getRight(){
+
+        return right;
     }
 
 
-    public void insereDireita(Node inserir){
+    public void insertRight(Node node){
 
-        this.direita = inserir;
+        this.right = node;
     }
 
-    public void insereEsquerda(Node inserir){
+    public void insertLeft(Node node){
 
-        this.esquerda = inserir;
+        this.left = node;
     }
 
-    public  void insereValor(int valor){
-        this.info = valor;
+    public  void insertValue(int value){
+        this.info = value;
     }
 
-    public  void remove(){
-
-
-    }
 }

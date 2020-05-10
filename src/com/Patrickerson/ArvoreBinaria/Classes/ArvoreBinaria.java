@@ -2,108 +2,108 @@ package com.Patrickerson.ArvoreBinaria.Classes;
 
 public class ArvoreBinaria {
 
-    private Node raiz;
+    private Node root;
 
 
-    boolean not_vazio(){
+    boolean not_void(){
 
-        return raiz != null;
+        return root != null;
     }
 
     public void inserir(int info){
-        if (raiz == null) {
-            Node no = new Node();
-            no.insereValor(info);
-            raiz = no;
+        if (root == null) {
+            Node node = new Node();
+            node.insertValue(info);
+            root = node;
         }else {
-            inserir_recursivo(info, raiz);
+            recursive_insert(info, root);
         }
     }
-    private void inserir_recursivo(int info, Node no_atual) {
+    private void recursive_insert(int info, Node actualNode) {
 
-        if (info < no_atual.getInfo()) {
-            Node no = no_atual.getEsquerda();
-            if (no == null) {
-                Node novo_no = new Node();
-                novo_no.insereValor(info);
-                no_atual.insereEsquerda(novo_no);
+        if (info < actualNode.getInfo()) {
+            Node node = actualNode.getLeft();
+            if (node == null) {
+                Node newNode = new Node();
+                newNode.insertValue(info);
+                actualNode.insertLeft(newNode);
             } else {
-                inserir_recursivo(info, no_atual.getEsquerda());
+                recursive_insert(info, actualNode.getLeft());
             }
         } else {
-            Node no = no_atual.getDireita();
-            if (no == null) {
-                Node novo_no = new Node();
-                novo_no.insereValor(info);
-                no_atual.insereDireita(novo_no);
+            Node node = actualNode.getRight();
+            if (node == null) {
+                Node new_node = new Node();
+                new_node.insertValue(info);
+                actualNode.insertRight(new_node);
             } else {
-                inserir_recursivo(info, no_atual.getDireita());
+                recursive_insert(info, actualNode.getRight());
             }
         }
 
     }
 
-    public void pre_ordem(){
-        pos_ordem_recursivo(raiz);
+    public void pre_order(){
+        before_order_recursive(root);
     }
 
-    private void pre_ordem_recursivo(Node node){
+    private void before_order_recursive(Node node){
         if(node !=null) {
             System.out.println(node.getInfo());
-            pre_ordem_recursivo(node.getEsquerda());
-            pre_ordem_recursivo(node.getDireita());
+            before_order_recursive(node.getLeft());
+            before_order_recursive(node.getRight());
         }
 
 
     }
 
-    public  void in_ordem(){
-        in_ordem_recursivo(raiz);
+    public  void in_order(){
+        in_order_recursive(root);
     }
-    private void in_ordem_recursivo(Node node){
+    private void in_order_recursive(Node node){
     if(node !=null) {
-        in_ordem_recursivo(node.getEsquerda());
+        in_order_recursive(node.getLeft());
         System.out.println(node.getInfo());
-        in_ordem_recursivo(node.getDireita());
+        in_order_recursive(node.getRight());
     }
     }
 
-    public void pos_ordem(){
-        pos_ordem_recursivo(raiz);
+    public void pos_order(){
+        after_order_recursive(root);
     }
 
-    private void pos_ordem_recursivo(Node node){
+    private void after_order_recursive(Node node){
         if(node !=null) {
-            pos_ordem_recursivo(node.getEsquerda());
-            pos_ordem_recursivo(node.getDireita());
+            after_order_recursive(node.getLeft());
+            after_order_recursive(node.getRight());
             System.out.println(node.getInfo());
 
         }
     }
 
 
-    public int remove_maior(){
-        if(not_vazio()) {
+    public int remove_biggest(){
+        if(not_void()) {
 
-            if(raiz.getDireita() == null){
-                raiz = raiz.getEsquerda();
+            if(root.getRight() == null){
+                root = root.getLeft();
             }
             else {
-                return remove_maior_recursivo(raiz);
+                return remove_maior_recursivo(root);
             }}System.out.println("Arvore vazia");
         return 0;
     }
 
     private int remove_maior_recursivo(Node node){
-        if(node.getDireita() != null) {
-            if (node.getDireita().getDireita() == null) {
-                int removed_node = node.getDireita().getInfo();
-                node.insereDireita(null);
+        if(node.getRight() != null) {
+            if (node.getRight().getRight() == null) {
+                int removed_node = node.getRight().getInfo();
+                node.insertRight(null);
                 return removed_node;
 
 
             } else {
-                return remove_maior_recursivo(node.getDireita());
+                return remove_maior_recursivo(node.getRight());
             }
         }else{
             return 0;
@@ -111,13 +111,13 @@ public class ArvoreBinaria {
     }
 
 
-    public int remove_menor(){
-        if(not_vazio()) {
-            if (raiz.getEsquerda() != null) {
-                return remove_menor_recursivo(raiz);
+    public int remove_smaller(){
+        if(not_void()) {
+            if (root.getLeft() != null) {
+                return remove_smaller_recursive(root);
             }else {
-                int info_removed = raiz.getInfo();
-                raiz = raiz.getDireita();
+                int info_removed = root.getInfo();
+                root = root.getRight();
                 return  info_removed;
             }
         }else{
@@ -125,14 +125,14 @@ public class ArvoreBinaria {
         return 0;}
     }
 
-    private int remove_menor_recursivo(Node node){
-        if (node.getEsquerda() != null){
-            if(node.getEsquerda().getEsquerda() == null) {
-                int removed_node = node.getEsquerda().getInfo();
-                node.insereEsquerda(null);
+    private int remove_smaller_recursive(Node node){
+        if (node.getLeft() != null){
+            if(node.getLeft().getLeft() == null) {
+                int removed_node = node.getLeft().getInfo();
+                node.insertLeft(null);
                 return removed_node;
             }else {
-                return remove_menor_recursivo(node.getEsquerda());
+                return remove_smaller_recursive(node.getLeft());
 
         }
 
@@ -141,88 +141,96 @@ public class ArvoreBinaria {
         return node.getInfo();
     }
 
-
-    private void substitui_direita(){
-
-    }
+    
 
     public void remove(int valor){
-        if(not_vazio() && raiz.getInfo() != valor){
-            remove_recursivo(valor, raiz, null);
+        if(not_void() && root.getInfo() != valor){
+            remove_recursive(valor, root, null);
         }else{
-            if (raiz.getDireita() != null) {
+            if (root.getRight() != null) {
                 System.out.println("Right not null");
                 Node new_node = new Node();
-                new_node.insereValor(remove_menor_recursivo(raiz.getDireita()));
+                new_node.insertValue(remove_smaller_recursive(root.getRight()));
 
-                Node after_left = raiz.getEsquerda();
-                Node after_right = raiz.getDireita();
+                Node after_left = root.getLeft();
+                Node after_right = root.getRight();
 
-                new_node.insereDireita(after_right);
-                new_node.insereEsquerda(after_left);
-                raiz = new_node;
+                new_node.insertRight(after_right);
+                new_node.insertLeft(after_left);
+                root = new_node;
 
 
-            } else if (raiz.getEsquerda() != null) {
+            } else if (root.getLeft() != null) {
                 System.out.println("Left not null");
                 Node new_node = new Node();
-                Node after_left = raiz.getEsquerda();
-                Node after_right = raiz.getDireita();
-                new_node.insereValor(remove_maior_recursivo(raiz.getEsquerda()));
-                new_node.insereEsquerda(after_left);
-                new_node.insereDireita(after_right);
-                after_left.insereDireita(new_node);
+                new_node.insertValue(remove_maior_recursivo(root.getLeft()));
+
+                Node after_left = root.getLeft();
+                Node after_right = root.getRight();
+
+                new_node.insertLeft(after_left);
+                new_node.insertRight(after_right);
+
+                root = new_node;
 
             } else {
                 System.out.println("left and right null");
-                raiz = null;
+                root = null;
 
             }
         }
-
     }
 
 
-    private  void remove_recursivo(int valor, Node node, Node node_before) {
+    private  void remove_recursive(int valor, Node node, Node node_before) {
         if (node != null) {
             System.out.println("Node not null");
             System.out.println(node.getInfo());
             if (node.getInfo() != valor) {
                 if (node.getInfo() > valor) {
-                    if(node.getEsquerda() !=null) {
-                        remove_recursivo(valor, node.getEsquerda(), node);
+                    if(node.getLeft() !=null) {
+                        remove_recursive(valor, node.getLeft(), node);
                     }
                 }else {
-                    if(node.getDireita() != null) {
-                        remove_recursivo(valor, node.getDireita(), node);
+                    if(node.getRight() != null) {
+                        remove_recursive(valor, node.getRight(), node);
                     }
                 }
             } else {
                 System.out.println("Found the node");
-                if (node.getDireita() != null) {
+                if (node.getRight() != null) {
                     System.out.println("Right not null");
                     Node new_node = new Node();
-                    Node after_left = node.getEsquerda();
-                    Node after_right = node.getDireita();
-                    new_node.insereValor(remove_maior_recursivo(node.getDireita()));
-                    new_node.insereDireita(after_right);
-                    new_node.insereEsquerda(after_left);
-                    node_before.insereEsquerda(new_node);
+                    new_node.insertValue(remove_maior_recursivo(node.getRight()));
+
+                    Node after_left = node.getLeft();
+                    Node after_right = node.getRight();
+
+                    new_node.insertRight(after_right);
+                    new_node.insertLeft(after_left);
+                    node_before.insertLeft(new_node);
 
 
-                } else if (node.getEsquerda() != null) {
+                } else if (node.getLeft() != null) {
                     System.out.println("Left not null");
                     Node new_node = new Node();
-                    Node after_left = node.getEsquerda();
-                    Node after_right = node.getDireita();
-                    new_node.insereValor(remove_maior_recursivo(node.getEsquerda()));
-                    new_node.insereEsquerda(after_left);
-                    new_node.insereDireita(after_right);
-                    node_before.insereDireita(new_node);
+                    new_node.insertValue(remove_maior_recursivo(node.getLeft()));
+
+                    Node after_left = node.getLeft();
+                    Node after_right = node.getRight();
+
+                    new_node.insertLeft(after_left);
+                    new_node.insertRight(after_right);
+                    node_before.insertRight(new_node);
 
                 } else {
                     System.out.println("left and right null");
-                    remove_maior_recursivo(node);
+                    if(node_before.getInfo() <= valor){
+                        node_before.insertRight(null);
+                    }else{
+                        node_before.insertLeft(null);
+                    }
+
 
                 }
             }
