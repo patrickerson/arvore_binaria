@@ -56,15 +56,60 @@ public class Main {
 
 
 
-        arvoreBinaria.remove(12);
+
+
         arvoreBinaria.remove(10);
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
         System.out.println("------------------------");
         System.out.println("REMOVE - In ordem");
         System.out.println("------------------------");
         arvoreBinaria.in_order();
+
+        arvoreBinaria.remove(12);
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
+
+        System.out.println("------------------------");
+        System.out.println("REMOVE - In ordem");
+        System.out.println("------------------------");
+        arvoreBinaria.in_order();
+
+
+
+
+        arvoreBinaria.remove(13  );
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
+
+        System.out.println("------------------------");
+        System.out.println("REMOVE - In ordem");
+        System.out.println("------------------------");
+        arvoreBinaria.in_order();
+
+        arvoreBinaria.remove(8  );
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
+
+        System.out.println("------------------------");
+        System.out.println("REMOVE - In ordem");
+        System.out.println("------------------------");
+        arvoreBinaria.in_order();
+
+        arvoreBinaria.remove(9 );
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
+
+        System.out.println("------------------------");
+        System.out.println("REMOVE - In ordem");
+        System.out.println("------------------------");
+        arvoreBinaria.in_order();
+
+        arvoreBinaria.inserir(30);
+
+        arvoreBinaria.in_order();
+
+
     }
-
-
-
 
 }
