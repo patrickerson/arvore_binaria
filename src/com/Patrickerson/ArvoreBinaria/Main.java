@@ -4,7 +4,7 @@ import com.Patrickerson.ArvoreBinaria.Classes.ArvoreBinaria;
 
 public class Main {
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         ArvoreBinaria arvoreBinaria = new ArvoreBinaria();
 
@@ -54,7 +54,8 @@ public class Main {
         arvoreBinaria.in_ordem();
 
 
-        arvoreBinaria.remove(8);
+        arvoreBinaria.remove(10);
+
         System.out.println("------------------------");
         System.out.println("REMOVE - In ordem");
         System.out.println("------------------------");
