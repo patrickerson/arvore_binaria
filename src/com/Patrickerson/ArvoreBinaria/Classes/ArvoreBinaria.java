@@ -141,11 +141,12 @@ public class ArvoreBinaria {
     
 
     public void remove(int valor){
+
         if(not_void() && root.getInfo() != valor){
             remove_recursive(valor, root, null);
         }else{
             if (root.getRight() != null) {
-
+                System.out.println("dentro da func");
                 Node new_node = new Node();
                 Node after_left = root.getLeft();
                 Node after_right = root.getRight();

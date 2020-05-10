@@ -105,7 +105,7 @@ public class Main {
         System.out.println("------------------------");
         arvoreBinaria.in_order();
 
-        arvoreBinaria.inserir(30);
+
 
         arvoreBinaria.in_order();
 
