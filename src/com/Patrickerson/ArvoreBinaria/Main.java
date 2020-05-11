@@ -7,17 +7,13 @@ public class Main {
     public static void main(String[] args){
 
         ArvoreBinaria arvoreBinaria = new ArvoreBinaria();
-
         arvoreBinaria.inserir(10);
-        arvoreBinaria.inserir(8);
+        arvoreBinaria.inserir(14);
         arvoreBinaria.inserir(9);
-        arvoreBinaria.inserir(1);
-        arvoreBinaria.inserir(13);
-        arvoreBinaria.inserir(12);
-        arvoreBinaria.inserir(16);
+        arvoreBinaria.inserir(15);
+        arvoreBinaria.inserir(8);
 
-
-
+        arvoreBinaria.inserir(7);
 
 
 
@@ -53,11 +49,6 @@ public class Main {
         System.out.println("------------------------");
         arvoreBinaria.in_order();
 
-
-
-
-
-
         arvoreBinaria.remove(10);
         System.out.print("ROOT: ");
         System.out.println(arvoreBinaria.get_root());
@@ -74,9 +65,6 @@ public class Main {
         System.out.println("REMOVE - In ordem");
         System.out.println("------------------------");
         arvoreBinaria.in_order();
-
-
-
 
         arvoreBinaria.remove(13  );
         System.out.print("ROOT: ");
@@ -106,9 +94,16 @@ public class Main {
         arvoreBinaria.in_order();
 
 
+        arvoreBinaria.inserir(10);
+        arvoreBinaria.inserir(15);
 
+        System.out.print("ROOT: ");
+        System.out.println(arvoreBinaria.get_root());
+
+        System.out.println("------------------------");
+        System.out.println("REMOVE - In ordem");
+        System.out.println("------------------------");
         arvoreBinaria.in_order();
-
 
     }
 

@@ -7,10 +7,12 @@ public class Node {
 
 
     public int getInfo(){
+
         return info;
     }
 
     public Node getLeft(){
+
         return left;
     }
 
