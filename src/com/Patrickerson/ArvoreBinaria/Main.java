@@ -7,103 +7,111 @@ public class Main {
     public static void main(String[] args){
 
         ArvoreBinaria arvoreBinaria = new ArvoreBinaria();
-        arvoreBinaria.inserir(10);
-        arvoreBinaria.inserir(14);
-        arvoreBinaria.inserir(9);
-        arvoreBinaria.inserir(15);
-        arvoreBinaria.inserir(8);
 
-        arvoreBinaria.inserir(7);
-
-
-
-        System.out.println("------------");
-        System.out.println("Pre ordem");
-        System.out.println("------------");
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
+        System.out.println("TESTE COM ARVORE COM FB de pai -2 e FB de filho 1");
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
+        arvoreBinaria.inserir(65);
         arvoreBinaria.pre_order();
 
-        System.out.println("------------");
-        System.out.println("In ordem");
-        System.out.println("------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.inserir(95);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.inserir(80);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_biggest();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_smaller();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_smaller();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.inserir(80);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_biggest();
+        arvoreBinaria.pre_order();
+
+
+        System.out.println("\n");
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
+        System.out.println("TESTE COM ARVORE COM FB de pai 2 e FB de filho -1");
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
+
+        arvoreBinaria.inserir(95);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.inserir(65);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.inserir(80);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_biggest();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_smaller();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_smaller();
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.inserir(80);
+        arvoreBinaria.pre_order();
+
+        arvoreBinaria.remove_biggest();
+        arvoreBinaria.pre_order();
 
 
 
-        System.out.println("------------");
-        System.out.println("Pos ordem");
-        System.out.println("------------");
-        arvoreBinaria.pos_order();
-        System.out.print("Remove maior: ");
-        System.out.println(arvoreBinaria.remove_biggest());
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
+        System.out.println("TESTE DE INSERÇÃ E REMOÇÃO");
+        System.out.println("***************************************************");
+        System.out.println("***************************************************");
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE MAIOR - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.inserir(86);
+        arvoreBinaria.pre_order();
 
-        System.out.print("Remove menor: ");
-        System.out.println(arvoreBinaria.remove_smaller());
+        arvoreBinaria.inserir(47);
+        arvoreBinaria.pre_order();
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE MENOR - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.inserir(30);
+        arvoreBinaria.pre_order();
 
-        arvoreBinaria.remove(10);
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.inserir(20);
+        arvoreBinaria.pre_order();
 
-        arvoreBinaria.remove(12);
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
+        arvoreBinaria.inserir(90);
+        arvoreBinaria.pre_order();
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.inserir(110);
+        arvoreBinaria.pre_order();
 
-        arvoreBinaria.remove(13  );
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
+        arvoreBinaria.remove(90);
+        arvoreBinaria.pre_order();
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.remove(20);
+        arvoreBinaria.pre_order();
 
-        arvoreBinaria.remove(8  );
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
+        arvoreBinaria.remove(47);
+        arvoreBinaria.pre_order();
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.remove(86);
+        arvoreBinaria.pre_order();
 
-        arvoreBinaria.remove(9 );
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
+        arvoreBinaria.remove(30);
+        arvoreBinaria.pre_order();
 
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
-
-
-        arvoreBinaria.inserir(10);
-        arvoreBinaria.inserir(15);
-
-        System.out.print("ROOT: ");
-        System.out.println(arvoreBinaria.get_root());
-
-        System.out.println("------------------------");
-        System.out.println("REMOVE - In ordem");
-        System.out.println("------------------------");
-        arvoreBinaria.in_order();
+        arvoreBinaria.remove(110);
+        arvoreBinaria.pre_order();
 
     }
 

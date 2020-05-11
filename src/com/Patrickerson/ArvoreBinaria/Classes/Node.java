@@ -36,4 +36,10 @@ public class Node {
         this.info = value;
     }
 
+    public void substitue(Node node){
+        info = node.getInfo();
+        left = node.getLeft();
+        right = node.getRight();
+    }
+
 }
